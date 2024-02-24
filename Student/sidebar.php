@@ -19,7 +19,7 @@
       </li>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="result.php">
           <i class="fas fa-fw fa-table"></i>
           <span> Result</span></a>
       </li>

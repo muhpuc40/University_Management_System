@@ -20,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="img/logo/puc.png" rel="icon">
-    <title>CSE- Student Enroll</title>
+    <title>CSE- Student Result</title>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -42,8 +42,8 @@
                     <h1 class="h3 mb-0 text-gray-800">Enroll Course</h1>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="dashboard.php">Student</a></li>
-                        <li class="breadcrumb-item">Enroll</li>
-                        <li class="breadcrumb-item active" aria-current="page">Course</li>
+                        <li class="breadcrumb-item">Result</li>
+                        <li class="breadcrumb-item active" aria-current="page">Detailed</li>
                     </ol>
                     </div>
 
