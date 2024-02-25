@@ -168,7 +168,17 @@
               ?>
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+
+                <?php
+                         
+    $x = "SELECT name FROM teacher_image WHERE user_id= $Teacher_id";
+    $y = mysqli_query($conn, $x);
+    $img = mysqli_fetch_array($y);
+    //echo $img['name'];
+?>
+
+<img class="img-profile rounded-circle" src="img/<?php echo $img['name'];?>" style="max-width: 160px">
+
                 <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $r['email'] ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
