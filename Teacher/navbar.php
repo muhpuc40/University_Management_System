@@ -159,10 +159,17 @@
             </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
+              <?php
+                  include '../conn.php';
+                  $Teacher_id = $_SESSION['user_id'];
+                  $s = "SELECT * FROM teacher_login WHERE id= $Teacher_id";
+                  $q = mysqli_query($conn, $s);
+                  $r = mysqli_fetch_array($q);
+              ?>
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Kingshuk Dhar</span>
+                <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $r['email'] ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="edit.php">
