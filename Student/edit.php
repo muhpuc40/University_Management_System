@@ -51,7 +51,7 @@
             </div>
             <!-- Form  -->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <!-- Form Basic -->
                     <div class="card mb-4">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -72,6 +72,29 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-6">
+                                                                               
+                                                                
+                              <?php
+                                                
+                                  $x = "SELECT name FROM student_image WHERE user_id= $student_id ORDER BY id DESC LIMIT 1";
+                                  $y = mysqli_query($conn, $x);
+                                  $img = mysqli_fetch_array($y);
+                                  //echo $img['name'];
+                              ?>
+                              <img class="img-profile rounded-square" src="img/<?php echo $img['name'];?>" style="max-width: 160px">
+                              <form method="post" enctype="multipart/form-data">
+                              <div class="form-group">
+                              <label for="usr">Image:</label>
+                              <input type="file" class="form-control" id="imgInp" name="image">
+                              <img id="blah" src="#" height="150px" weight="150px" />   
+                              </div>
+                              <button type="submit" value="submit" name="submit" class="btn btn-primary">Submit</button>
+                              </form>   
+                      
+                
+              </div>
             </div>
           </div>
           <!---Container Fluid-->
@@ -86,8 +109,43 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/ruang-admin.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+            function readURL(input){
+                if(input.files && input.files[0]){
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        $('#blah').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            $("#imgInp").change(function() {
+                readURL(this);
+            });
+        </script>
   </body>
 </html>
+<?php
+                if(isset($_POST['submit'])){
+                    $image = $_FILES['image']['name'];
+                    $splitted_name = explode(".",$image);
+                    $name = $splitted_name[0];
+                    $ext = $splitted_name[sizeof($splitted_name)-1];
+                    //echo $name,".",$ext,"<br>";
+                    $new_name = md5(date('Y-m-d H:i:s')) ;
+                    //echo $new_name,"<br>";
+                    $final_name =$new_name.".".$ext;
+                    echo $final_name;
+                    $query = "INSERT INTO student_image(user_id,name) VALUES ('$student_id' ,'$final_name')";
+                    if(mysqli_query($conn, $query)){
+                        echo '<br><span style="color:blue;"> Successfully inserted </span>';
+                        if(move_uploaded_file($_FILES["image"]["tmp_name"], "img/$final_name")){
+                            echo '<br><span style="color:green;"> Successfully transfered </span>';
+                        }
+                    }
+                }
+            ?>
 <?php 
     if(isset($_POST['submitBtn'])){
       $student_email = $_POST["email"];
