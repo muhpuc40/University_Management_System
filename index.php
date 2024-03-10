@@ -15,11 +15,18 @@ if(isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="description" content="This is a login page template based on Bootstrap 5">
-		<title>PUC || Login Page</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="Admin/img/logo/puc.png" rel="icon">
+    <title>PUC || Login Page</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/ruang-admin.min.css" rel="stylesheet">
+    <link href="css/ruang-admin.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 		<style>
 			body {
 			background-color: #8fc0db;
@@ -28,7 +35,7 @@ if(isset($_SESSION['user'])){
 				background-color: whitesmoke;
 			}
 		</style>
-	</head>
+  </head>
 	<body>
 		<section class="h-100">		
 			<div class="container h-100">		  
@@ -133,7 +140,7 @@ if(isset($_SESSION['user'])){
 					exit();
 				}
 		else {?>
-			<div class="from - group" > Wrong  !!! </div><?php
+			<div> Wrong  !!! </div><?php
 				}
 	}  
 ?>

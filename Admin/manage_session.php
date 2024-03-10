@@ -73,7 +73,9 @@
                                             ?>
                                         </select>
                                         </div>
+                                        <div class="text-center">
                                         <button type="submit" class="btn btn-danger mb-1"  name="deactiveBtn" id="button">Deactive</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -100,7 +102,9 @@
                                             ?>
                                         </select>
                                         </div>
-                                        <button type="submit" class="btn btn-success mb-1"  name="activeBtn" id="button">Active</button>
+                                        <div class="text-center">
+                                        <button  type="submit" class="btn btn-success mb-1"  name="activeBtn" id="button"> Active </button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

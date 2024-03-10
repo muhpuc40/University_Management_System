@@ -90,6 +90,7 @@
                           <input type="file" class="form-control" id="imgInp" name="image">
                           <img id="blah" src="#" height="150px" weight="150px" />   
                           </div>
+                          
                           <button type="submit" value="submit" name="submit" class="btn btn-primary">Submit</button>
                           </form>   
                   
