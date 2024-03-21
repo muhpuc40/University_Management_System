@@ -1,9 +1,8 @@
-Radme under construction 
+# UNIVERSITY MANAGEMENT SYSTEM
 
 
 
-
-Andmin Emai :  Admin@gmail.com
+Admin Email :  Admin@gmail.com
 Admin Password : 12345
 
 
