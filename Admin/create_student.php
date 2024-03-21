@@ -153,7 +153,7 @@
         $password = $_POST["password"];
         $str = "INSERT INTO student_login(email,password)
         VALUES 
-        ('".$email."','".md5($password)."')";
+        ('".$email."','".($password)."')";
         if(mysqli_query($conn, $str)){
             echo 'Success !!!';
             header('Location: student_list.php');

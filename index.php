@@ -98,7 +98,7 @@ if(isset($_SESSION['user'])){
     if(isset($_POST['loginBtn']))
 	{
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
 
         $query = "select * from admin_login where email='".$email."' 
         and password='".$password."'";

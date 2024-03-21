@@ -155,7 +155,7 @@
         $password = $_POST["password"];
         $str = "INSERT INTO teacher_login(email,password)
         VALUES 
-        ('".$email."','".md5($password)."')";
+        ('".$email."','".($password)."')";
         if(mysqli_query($conn, $str)){
             echo 'Success !!!';
             header('Location: teacher_list.php');

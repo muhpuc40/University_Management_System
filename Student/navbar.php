@@ -174,7 +174,7 @@
     $x = "SELECT name FROM student_image WHERE user_id= $S_id";
     $y = mysqli_query($conn, $x);
     $img = mysqli_fetch_array($y);
-    //echo $img['name'];
+   //echo $img['name'];
 ?>
                 <img class="img-profile rounded-circle" src="img/<?php echo $img['name'];?>" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $r['email'] ?></span>

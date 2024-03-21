@@ -48,6 +48,7 @@
             <a class="collapse-item" href="teacher_list.php">Teachers List</a>
             <a class="collapse-item" href="student_list.php">Students List</a>
             <a class="collapse-item" href="course_list.php">Course List</a>
+            <a class="collapse-item" href="session_list.php">Session List</a>
           </div>
         </div>
       </li>
