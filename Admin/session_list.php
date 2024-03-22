@@ -73,13 +73,13 @@
                         while($r = mysqli_fetch_array($q)){ ?>
                             <tr>
                                 <td><?php echo $r['id'] ?></td>
-                                <td><?php echo $r['name'] ?></td>
-                                 <td><?php echo $r['status'] ?></td>
+                                <td><?php echo $r['email'] ?></td>
+                                 <td><?php echo $r['password'] ?></td>
                                 <td>
-                                <a href="edit_student.php?Edit_id=<?php echo $r['id'] ?>" class="btn btn-secondary">Edit</a>
+                                <a href="edit_session.php?Tid=<?php echo $r['id'] ?>" class="btn btn-secondary">Edit</a>
                                 </td>
                                 <td>
-                                <a href="<?php echo $r['id'] ?>&email=<?php echo $r['name'] ?>" class="btn btn-warning"
+                                <a href="<?php echo $r['id'] ?>&email=<?php echo $r['email'] ?>" class="btn btn-warning"
                                 data-target="#exampleModalCenter<?php echo $r['id'] ?>" data-toggle="modal" type="button" id="#modalCenter">Delete</a>
                                 <div class="modal fade" id="exampleModalCenter<?php echo $r['id'] ?>" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -92,16 +92,16 @@
                                           </button>
                                         </div>
                                         <div class="modal-body">
-                                        Are you sure you want to delete <?php echo $r['name'] ?> ?
+                                        Are you sure you want to delete <?php echo $r['email'] ?> ?
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-                                          <a class="btn btn-danger" href="delete_student.php?dlt_id=<?php echo $r['id'] ?>&email=<?php echo $r['email'] ?>">Confirm Delete</a>
+                                          <a class="btn btn-danger" href="delete_teacher.php?dlt_id=<?php echo $r['id'] ?>&email=<?php echo $r['email'] ?>">Confirm Delete</a>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                              </td>
+                                </td>
                             </tr>
                         <?php  }
                     ?>
