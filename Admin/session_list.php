@@ -76,7 +76,7 @@
                                 <td><?php echo $r['name'] ?></td>
                                  <td><?php echo $r['status'] ?></td>
                                 <td>
-                                <a href="edit_student.php?Edit_id=<?php echo $r['id'] ?>" class="btn btn-secondary">Edit</a>
+                                <a href="eit_session.php?Edit_id=<?php echo $r['id'] ?>" class="btn btn-secondary">Edit</a>
                                 </td>
                                 <td>
                                 <a href="<?php echo $r['id'] ?>&email=<?php echo $r['name'] ?>" class="btn btn-warning"
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-                                          <a class="btn btn-danger" href="delete_student.php?dlt_id=<?php echo $r['id'] ?>&email=<?php echo $r['email'] ?>">Confirm Delete</a>
+                                          <a class="btn btn-danger" href="delete_session.php?dlt_id=<?php echo $r['id'] ?>">Confirm Delete</a>
                                         </div>
                                       </div>
                                     </div>
