@@ -11,7 +11,7 @@
       header('Location: ../unauthorized.php');
     }
     $s_id = $_REQUEST['Edit_id'];
-    $s = "Select * from student_login where id=".$s_id;
+    $s = "Select * from sessions where id=".$s_id;
     $query = mysqli_query($conn, $s);
     $r = mysqli_fetch_assoc($query);
 ?>
@@ -24,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="img/logo/puc.png" rel="icon">
-    <title>CSE - Edit Student</title>
+    <title>CSE - Edit Session</title>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -43,11 +43,11 @@
           <!-- Container Fluid-->
           <div class="container-fluid" id="container-wrapper">
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-              <h1 class="h3 mb-0 text-gray-800">Edit Student Information</h1>
+              <h1 class="h3 mb-0 text-gray-800">Edit Session Information</h1>
               <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
               <li class="breadcrumb-item">Preview</li>
-              <li class="breadcrumb-item"><a href="student_list.php">Student list</a></li>
+              <li class="breadcrumb-item"><a href="student_list.php">Session list</a></li>
               <li class="breadcrumb-item active" aria-current="page">Edit</li>
               </ol>
             </div>
@@ -62,12 +62,12 @@
                         <div class="card-body">
                             <form method="post">
                                 <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="text" name="email" class="form-control" value="<?php echo $r['email'] ?>" id="">
+                                <label for="exampleInputEmail1">Session</label>
+                                <input type="text" name="email" class="form-control" value="<?php echo $r['name'] ?>" id="">
                                 </div>
                                 <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="text" name="password" class="form-control" value="<?php echo $r['password'] ?>" id="">
+                                <label for="exampleInputPassword1">Status</label>
+                                <input type="text" name="password" class="form-control" value="<?php echo $r['status'] ?>" id="">
                                 </div>
                                 <button type="submit" name="submitBtn" class="btn btn-success">Update</button>
                             </form>
@@ -94,10 +94,10 @@
     if(isset($_POST['submitBtn'])){
         $s_email = $_POST["email"];
         $s_pwd = $_POST["password"];
-        $s = "UPDATE student_login  SET email='".$s_email."',  password='".$s_pwd."' WHERE id = $r[id]";
+        $s = "UPDATE sessions  SET name='".$s_email."',  status='".$s_pwd."' WHERE id = $r[id]";
         if(mysqli_query($conn, $s)){
       echo 'sucesss';
-      header('Location: student_list.php');
+      header('Location: session_list.php');
         }
     }
     ob_end_flush();
