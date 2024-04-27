@@ -4,7 +4,7 @@
 
 <h2>🚀 Live Demo</h2>
 
-[umsbyminhaj.000webhostapp.com](umsbyminhaj.000webhostapp.com)
+[umsbyminhaj.000webhostapp.com](https://umsbyminhaj.000webhostapp.com/)
 
 <h2>🛠️ Login Steps:</h2>
 
