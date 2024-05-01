@@ -72,15 +72,16 @@
                         </div>
                         <div class="col-lg-12">
               <div class="card mb-4">
+                <form action="" method="post"></form>
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush" id="table">
                     <thead>
+                        <th>No.</th>
                         <th>Select</th>
-                        <th>Name</th>
-                        <th>Code</th>
-                        <th>Type</th>
                         <th>Semester</th>
-                        <th>Credit</th>
+                        <th>Name</th>
+                        <th>Exam Type</th>
+                        <th>Status/Msg</th>
                     </thead>
                     <tbody>
                         <?php 
@@ -88,15 +89,25 @@
                             $r=mysqli_query($conn,$qry);
                             while($row=mysqli_fetch_array($r)){ ?>
                                 <tr>
-                                    <td>       <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
-                                    <label class="form-check-label" for="check2"></label>
-                                    </div></td>
+                                    <td> <?php echo $row['id']?> </td>
+                                    <td>                    
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck<?php echo $row['id']; ?>">
+                                            <label class="custom-control-label" for="customCheck<?php echo $row['id']; ?>"></label>
+                                        </div>
+                                    </td>
+                                    <td> <?php echo $row['semester']?> </td>                     
                                     <td> <?php echo $row['name']?> </td>
-                                    <td> <?php echo $row['code']?> </td>
-                                    <td> <?php echo $row['type']?> </td>
-                                    <td> <?php echo $row['semester']?> </td>
-                                    <td> <?php echo $row['credit']?> </td>
+                                    <td> 
+                                        <select class="form-control mb-3">
+                                            <option>Select</option>
+                                            <option>Regular</option>
+                                            <option>Retake</option>
+                                            <option>Rcourse</option>
+                                        </select> 
+                                    </td>
+
+                                    <td> </td>
                                 </tr>
                             <?php } ?>
                     </tbody>
@@ -104,6 +115,8 @@
                 
 
                 </div>
+                </form>
+                <button type="submit" name="submitBtn" id="button" class="btn btn-success">Submit</button>
                 </div>
 
                     </div>
@@ -125,13 +138,16 @@
     <script>
             //var table = document.getElementById('table');
             $('#table').hide();
+            $('#button').hide();
             function sessionChange(){
                 var session = document.getElementById('session').value;
                 if(session==""){
                     $('#table').hide();
+                    $('#button').hide();
                 }
                 else{
                     $('#table').show();
+                    $('#button').show();
                 }
             }
         </script>
