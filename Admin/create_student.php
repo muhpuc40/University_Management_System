@@ -9,8 +9,8 @@
    if($_SESSION['user'] != 'admin'){
       header('Location: ../unauthorized.php');
     }
-?>
-<?php include '../conn.php'; ?>
+
+include '../conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
