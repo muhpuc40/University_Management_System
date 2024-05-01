@@ -10,7 +10,7 @@
       header('Location: ../unauthorized.php');
     }
 
-include '../conn.php'; ?>
+  include '../conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
