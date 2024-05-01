@@ -84,6 +84,7 @@
                                     <td>
                                 <a href="delete_course.php?dlt_id=<?php echo $row['id'] ?>" class="btn btn-warning"
                                 data-target="#exampleModalCenter<?php echo $row['id'] ?>" data-toggle="modal" type="button" id="#modalCenter">Delete</a>
+                                
                                 <div class="modal fade" id="exampleModalCenter<?php echo $row['id'] ?>" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
